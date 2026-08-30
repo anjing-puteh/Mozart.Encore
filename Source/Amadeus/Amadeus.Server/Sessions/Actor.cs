@@ -19,6 +19,7 @@ public class Actor
         MusicCash       = user.MusicCash;
         ItemCash        = user.ItemCash;
         Level           = user.Level;
+        Battle          = user.Battle;
         Win             = user.Win;
         Lose            = user.Lose;
         Draw            = user.Draw;
@@ -44,6 +45,7 @@ public class Actor
         MusicCash       = user.MusicCash;
         ItemCash        = user.ItemCash;
         Level           = user.Level;
+        Battle          = user.Battle;
         Win             = user.Win;
         Lose            = user.Lose;
         Draw            = user.Draw;
@@ -84,6 +86,8 @@ public class Actor
 
     public int Level { get; set; }
 
+    public int Battle { get; set; }
+
     public int Win { get; set; }
 
     public int Lose { get; set; }
@@ -91,6 +95,8 @@ public class Actor
     public int Draw { get; set; }
 
     public int Experience { get; set; }
+
+    public int BonusPoint { get; set; }
 
     public int Ranking { get; set; }
 

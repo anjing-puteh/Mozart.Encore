@@ -20,6 +20,7 @@ public class Actor
         ItemCash              = user.ItemCash;
         CashPoint             = user.CashPoint;
         Level                 = user.Level;
+        Battle                = user.Battle;
         Win                   = user.Win;
         Lose                  = user.Lose;
         Draw                  = user.Draw;
@@ -52,6 +53,7 @@ public class Actor
         ItemCash              = user.ItemCash;
         CashPoint             = user.CashPoint;
         Level                 = user.Level;
+        Battle                = user.Battle;
         Win                   = user.Win;
         Lose                  = user.Lose;
         Draw                  = user.Draw;
@@ -99,6 +101,8 @@ public class Actor
 
     public int Level { get; set; }
 
+    public int Battle { get; set; }
+
     public int Win { get; set; }
 
     public int Lose { get; set; }
@@ -106,6 +110,8 @@ public class Actor
     public int Draw { get; set; }
 
     public int Experience { get; set; }
+
+    public int BonusPoint { get; set; }
 
     public bool IsAdministrator { get; init; }
 

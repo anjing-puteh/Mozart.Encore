@@ -64,19 +64,19 @@ public class CharacterInfoResponse : IMessage
     public int Level { get; set; }
 
     [MessageField(order: 7)]
-    public int Win { get; set; }
+    public int Battles { get; set; }
 
     [MessageField(order: 8)]
-    public int Lose { get; set; }
+    public int Win { get; set; }
 
     [MessageField(order: 9)]
-    public int Draw { get; set; }
+    public int Lose { get; set; }
 
     [MessageField(order: 10)]
     public int Experience { get; set; }
 
     [MessageField(order: 11)]
-    public int Battles { get; set; }
+    public int BonusPoint { get; set; }
 
     [MessageField(order: 12)]
     public bool IsAdministrator { get; init; }

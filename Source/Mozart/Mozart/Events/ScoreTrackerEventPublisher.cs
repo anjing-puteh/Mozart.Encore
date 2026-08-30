@@ -185,6 +185,8 @@ public class ScoreTrackerEventPublisher(IUserRepository repository, IOptions<Gam
                 if (state == null)
                     continue;
 
+                bool win  = scores.Max(s => s.Score) == state.Score;
+                bool draw = scores.Count(s => s.Score == state.Score) > 1;
                 var mission = ScoreCompletedEventData.MissionResult.None;
 
                 // Compute reward only when it is safe
@@ -257,6 +259,7 @@ public class ScoreTrackerEventPublisher(IUserRepository repository, IOptions<Gam
                         mission = ScoreCompletedEventData.MissionResult.Failed;
                 }
 
+                state.Session.Actor.BonusPoint += e.Mode == GameMode.Single ? 1 : draw ? 4 : win ? 5 : 3;
                 entries.Add(new ScoreCompletedEventData.ScoreEntry
                 {
                     MemberId   = (byte)id,
@@ -271,7 +274,7 @@ public class ScoreTrackerEventPublisher(IUserRepository repository, IOptions<Gam
                     Reward     = (ushort)Math.Max(0, reward),
                     Level      = state.Session.Actor.Level,
                     Experience = state.Session.Actor.Experience,
-                    Win        = scores.Max(s => s.Score) == state.Score,
+                    Win        = win,
                     Mission    = mission
                 });
             }

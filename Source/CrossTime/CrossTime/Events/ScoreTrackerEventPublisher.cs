@@ -259,6 +259,7 @@ public class ScoreTrackerEventPublisher(
 
                 await repository.Commit();
                 state.Session.Actor.Sync(user);
+                state.Session.Actor.BonusPoint += draw ? 4 : win ? 5 : 3;
 
                 entries.Add(new ScoreCompletedEventData.ScoreEntry
                 {

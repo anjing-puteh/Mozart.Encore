@@ -118,6 +118,8 @@ public class Actor
 
     public int Experience { get; set; }
 
+    public int BonusPoint { get; set; }
+
     public bool IsAdministrator { get; init; }
 
     public int Ranking { get; set; }

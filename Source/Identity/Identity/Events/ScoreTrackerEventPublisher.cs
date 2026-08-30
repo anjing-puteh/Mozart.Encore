@@ -275,6 +275,7 @@ public class ScoreTrackerEventPublisher(IUserRepository repository, IOptions<Gam
 
                 await repository.Commit();
                 state.Session.Actor.Sync(user);
+                state.Session.Actor.BonusPoint += e.Mode is GameMode.Single or GameMode.Couple ? 1 : draw ? 4 : win ? 5 : 3;
 
                 entries.Add(new ScoreCompletedEventData.ScoreEntry
                 {
