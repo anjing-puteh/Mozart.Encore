@@ -78,7 +78,7 @@ public class AuthorizeUserCommandTask(
                 Username       = token, // Originally use username
                 Level          = user.Level.ToString(),
                 Gender         = (user.Gender == Gender.Male ? 1 : 2).ToString(),
-                Token          = user.Id.ToString(), // Intended
+                Nickname       = user.Nickname,
                 Rank           = (user.FreePass.Type != FreePassType.None ? user.Ranking > 0 ? -user.Ranking : -999999 : user.Ranking).ToString(),
                 GatewayAddress = gatewayIp,
                 GatewayPort    = gatewayPort.ToString(),

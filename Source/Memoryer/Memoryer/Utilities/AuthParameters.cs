@@ -16,7 +16,7 @@ public class AuthParameters
     public string Password { get; init; } = "1234567890";
     public string Level { get; init; } = "0";
     public string Gender { get; init; } = "1";
-    public string Token { get; init; } = "";
+    public string Nickname { get; init; } = "";
     public string Email { get; init; } = "user@mail.domain";
     public string GatewayAddress { get; init; } = "";
     public string GatewayPort { get; init; } = "";
@@ -41,7 +41,7 @@ public class AuthParameters
             Password       = fields[7],
             Level          = fields[8],
             Gender         = fields[9],
-            Token          = fields[10],
+            Nickname       = fields[10],
             Email          = fields[11],
             GatewayAddress = fields[12],
             GatewayPort    = fields[13],
@@ -72,7 +72,7 @@ public class AuthParameters
         WriteField(sb, Password);
         WriteField(sb, Level);
         WriteField(sb, Gender);
-        WriteField(sb, Token);
+        WriteField(sb, Nickname);
         WriteField(sb, Email);
         WriteField(sb, GatewayAddress);
         WriteField(sb, GatewayPort);

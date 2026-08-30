@@ -95,7 +95,7 @@ public class StartGameCommandTask(
                 Username       = token,
                 Level          = user.Level.ToString(),
                 Gender         = (user.Gender == Gender.Male ? 1 : 2).ToString(),
-                Token          = user.Id.ToString(),
+                Nickname       = user.Nickname,
                 Rank           = (user.FreePass.Type != FreePassType.None
                     ? user.Ranking > 0 ? -user.Ranking : -999999
                     : user.Ranking).ToString(),
